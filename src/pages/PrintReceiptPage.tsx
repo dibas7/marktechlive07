@@ -44,7 +44,7 @@ export default function PrintReceiptPage() {
   }
 
   return (
-    <div className="min-h-screen bg-muted">
+    <div className="min-h-screen bg-muted print-page-a4">
       {/* Action Bar */}
       <div className="bg-card border-b border-border p-4 no-print">
         <div className="container mx-auto flex items-center justify-between">
@@ -67,7 +67,7 @@ export default function PrintReceiptPage() {
       </div>
 
       {/* Print Preview */}
-      <div className="p-6 flex justify-center">
+      <div className="p-6 flex justify-center print:block print:p-0">
         <PrintReceipt receipts={receiptsToShow} />
       </div>
     </div>

@@ -252,6 +252,7 @@ export default function ReceiptDetail() {
           </Card>
         </div>
 
+
         {/* Repair Notes - Admin Only Section (not printed) */}
         <RepairNoteEditor 
           receiptId={receipt.id}

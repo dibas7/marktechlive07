@@ -19,6 +19,8 @@ export function exportReceiptsToCsv(receipts: Receipt[], filename: string = 'rec
     'Received Date',
     'Estimated Delivery',
     'Actual Delivery',
+    'Delivery Condition',
+    'Delivered By/To',
     'Status',
     'Created At',
     'Updated At'
@@ -41,6 +43,8 @@ export function exportReceiptsToCsv(receipts: Receipt[], filename: string = 'rec
     format(new Date(receipt.received_date), 'yyyy-MM-dd'),
     receipt.estimated_delivery_date ? format(new Date(receipt.estimated_delivery_date), 'yyyy-MM-dd') : '',
     receipt.actual_delivery_date ? format(new Date(receipt.actual_delivery_date), 'yyyy-MM-dd') : '',
+    receipt.delivery_condition || '',
+    receipt.delivered_by || '',
     receipt.status,
     format(new Date(receipt.created_at), 'yyyy-MM-dd HH:mm'),
     format(new Date(receipt.updated_at), 'yyyy-MM-dd HH:mm')

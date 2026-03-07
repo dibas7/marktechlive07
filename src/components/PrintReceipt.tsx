@@ -26,14 +26,37 @@ export function PrintReceipt({ receipts }: PrintReceiptProps) {
       className="receipt-print bg-white text-black"
       style={{ 
         width: '210mm',
-        height: '148mm',
+        height: '148.5mm',
         padding: '3mm 5mm',
         boxSizing: 'border-box',
         display: 'flex',
         flexDirection: 'column',
+        position: 'relative',
+        overflow: 'hidden',
         ...labelFont
       }}
     >
+      {/* Background watermark */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          pointerEvents: 'none',
+          opacity: 0.2,
+        }}
+      >
+        <img
+          src={marktechLogo}
+          alt="MarkTech watermark"
+          style={{ width: '90mm', height: 'auto' }}
+        />
+      </div>
+
+      {/* Foreground content */}
+      <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', height: '100%' }}>
 
       {/* Header Section */}
       <div className="flex items-start justify-between" style={{ marginBottom: '1mm' }}>
@@ -138,10 +161,10 @@ export function PrintReceipt({ receipts }: PrintReceiptProps) {
         <thead>
           <tr style={{ backgroundColor: '#f0f0f0' }}>
             <th style={{ ...labelFont, border: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '6mm' }}>S.N</th>
-            <th style={{ ...labelFont, border: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '40mm' }}>Particulars</th>
-            <th style={{ ...labelFont, border: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '50mm'}}>Problem</th>
-            <th style={{ ...labelFont, border: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '30mm' }}>Model NO.</th>
-            <th style={{ ...labelFont, border: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '50mm' }}>Serial No/Service Tag</th>
+            <th style={{ ...labelFont, border: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '35mm' }}>Particulars</th>
+            <th style={{ ...labelFont, border: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '45mm'}}>Problem</th>
+            <th style={{ ...labelFont, border: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '30mm' }}>Model No.</th>
+            <th style={{ ...labelFont, border: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '35mm' }}>Serial No/Service Tag</th>
           </tr>
         </thead>
         <tbody>
@@ -177,17 +200,13 @@ export function PrintReceipt({ receipts }: PrintReceiptProps) {
         </tbody>
       </table>
 
-      {/* Terms & Conditions with सूचना - Centered */}
-      <div className="text-center" style={{ fontSize: '8pt', lineHeight: 4, marginBottom: '0.5mm' }}>
+      {/* Terms & VAT notice - two tight lines, no extra gap */}
+      <div className="text-center" style={{ fontSize: '8pt', lineHeight: 1.6, marginBottom: '1mm' }}>
         <p style={{ margin: 0 }}>
-          <span style={{ fontWeight: 600 }}>सूचना:</span> मर्मतका लागि छाडिएको सामान २ महिनासम्म लिन नआएमा हराए वा बिग्रिएमा त्यसको जिम्मेवाही कम्पनीले लिने छैन।
+          <span style={{ fontWeight: 600 }}>सूचना:</span>{' '}
+          मर्मतका लागि छाडिएको सामान २ महिनासम्म लिन नआएमा हराए वा बिग्रिएमा त्यसको जिम्मेवाही कम्पनीले लिने छैन।
         </p>
-      </div>
-
-      {/* VAT Notice with asterisk - Centered */}
-      <div className="text-center" style={{ marginBottom: '1mm' }}>
         <p style={{ ...labelFont, fontSize: '8pt', margin: 0 }}>
-      <div  style={{marginBottom: '1mm',height: '0.0mm'}}></div>
           * मर्मत खर्चमा अतिरिक्त मूल्य अभिवृद्धि कर (VAT) लाग्नेछ।
         </p>
       </div>
@@ -195,11 +214,11 @@ export function PrintReceipt({ receipts }: PrintReceiptProps) {
       {/* Signature Section - Moved up, compact */}
       <div className="flex justify-between" style={{ marginBottom: '1mm', padding: '0 13mm' }}>
         <div style={{ textAlign: 'center', width: '28mm' }}>
-          <div style={{ borderBottom: '1px solid #000', marginBottom: '0.5mm', height: '2mm' }}></div>
+          <div style={{ borderBottom: '1px solid #000', marginBottom: '0.5mm', height: '6mm' }}></div>
           <p style={{ ...labelFont, fontSize: '10.5pt', margin: 0 }}>EDD</p>
         </div>
         <div style={{ textAlign: 'center', width: '28mm' }}>
-          <div style={{ borderBottom: '1px solid #000', marginBottom: '0.5mm', height: '2mm' }}></div>
+          <div style={{ borderBottom: '1px solid #000', marginBottom: '0.5mm', height: '6mm' }}></div>
           <p style={{ ...labelFont, fontSize: '10.5pt', margin: 0 }}>For MKTN</p>
         </div>
       </div>
@@ -212,7 +231,7 @@ export function PrintReceipt({ receipts }: PrintReceiptProps) {
         width: '100%', 
         height: '1px', 
         backgroundColor: '#000', 
-        marginBottom: '3.5mm'
+        marginBottom: '4mm'
       }}></div>
 
       {/* Return Slip Notice - At the very bottom */}
@@ -249,6 +268,7 @@ export function PrintReceipt({ receipts }: PrintReceiptProps) {
         }}>
           PLEASE RETURN THIS SLIP
         </p>
+      </div>
       </div>
     </div>
   );
