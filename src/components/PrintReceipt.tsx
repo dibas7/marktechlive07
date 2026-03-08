@@ -163,8 +163,8 @@ export function PrintReceipt({ receipts }: PrintReceiptProps) {
             <th style={{ ...labelFont, border: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '6mm' }}>S.N</th>
             <th style={{ ...labelFont, border: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '35mm' }}>Particulars</th>
             <th style={{ ...labelFont, border: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '45mm'}}>Problem</th>
-            <th style={{ ...labelFont, border: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '30mm' }}>Model No.</th>
-            <th style={{ ...labelFont, border: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '35mm' }}>Serial No/Service Tag</th>
+            <th style={{ ...labelFont, border: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '25mm' }}>Model No.</th>
+            <th style={{ ...labelFont, border: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '30mm' }}>Serial No/Service Tag</th>
           </tr>
         </thead>
         <tbody>
