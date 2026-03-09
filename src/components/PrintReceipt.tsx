@@ -161,11 +161,11 @@ export function PrintReceipt({ receipts }: PrintReceiptProps) {
       >
         <thead>
           <tr style={{ backgroundColor: '#f0f0f0' }}>
-            <th style={{ ...labelFont, borderTop: '1px solid #000', borderLeft: '1px solid #000', borderRight: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '6mm' }}>S.N</th>
-            <th style={{ ...labelFont, borderTop: '1px solid #000', borderLeft: '1px solid #000', borderRight: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '35mm' }}>Particulars</th>
-            <th style={{ ...labelFont, borderTop: '1px solid #000', borderLeft: '1px solid #000', borderRight: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '55mm'}}>Problem</th>
-            <th style={{ ...labelFont, borderTop: '1px solid #000', borderLeft: '1px solid #000', borderRight: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '20mm' }}>Model No.</th>
-            <th style={{ ...labelFont, borderTop: '1px solid #000', borderLeft: '1px solid #000', borderRight: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '25mm' }}>S.N/Service Tag</th>
+            <th style={{ ...labelFont, borderTop: '1px solid #000', borderBottom: '1px solid #000', borderLeft: '1px solid #000', borderRight: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '6mm' }}>S.N</th>
+            <th style={{ ...labelFont, borderTop: '1px solid #000', borderBottom: '1px solid #000', borderLeft: '1px solid #000', borderRight: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '35mm' }}>Particulars</th>
+            <th style={{ ...labelFont, borderTop: '1px solid #000', borderBottom: '1px solid #000', borderLeft: '1px solid #000', borderRight: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '55mm'}}>Problem</th>
+            <th style={{ ...labelFont, borderTop: '1px solid #000', borderBottom: '1px solid #000', borderLeft: '1px solid #000', borderRight: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '20mm' }}>Model No.</th>
+            <th style={{ ...labelFont, borderTop: '1px solid #000', borderBottom: '1px solid #000', borderLeft: '1px solid #000', borderRight: '1px solid #000', padding: '0.8mm', textAlign: 'center', width: '25mm' }}>S.N/Service Tag</th>
           </tr>
         </thead>
         <tbody>
@@ -178,18 +178,19 @@ export function PrintReceipt({ receipts }: PrintReceiptProps) {
               <td style={{ ...dataFont, ...cellBorderBase, ...(isLastRow ? cellBorderBottom : {}), padding: '0.8mm', textAlign: 'center', height: '7mm', verticalAlign: 'top' }}>
                 {index + 1}
               </td>
-              <td style={{ ...dataFont, ...cellBorderBase, ...(isLastRow ? cellBorderBottom : {}), padding: '0.8mm', height: '7mm', verticalAlign: 'top', textTransform: 'capitalize', fontSize: '8.5pt', wordBreak: 'normal', overflowWrap: 'break-word' }}>
+              <td style={{ ...dataFont, ...cellBorderBase, ...(isLastRow ? cellBorderBottom : {}), padding: '0.8mm', height: '7mm', verticalAlign: 'top', textTransform: 'capitalize', fontSize: '7.5pt', wordBreak: 'normal', overflowWrap: 'break-word' }}>
                 {receipt.device_type}
                 {receipt.accessories && <span style={{ display: 'block', fontSize: '7pt', color: '#555' }}>({receipt.accessories})</span>}
               </td>
-              <td style={{ ...dataFont, ...cellBorderBase, ...(isLastRow ? cellBorderBottom : {}), padding: '0.8mm', height: '7mm', verticalAlign: 'top', fontSize: '8.5pt', wordBreak: 'normal', overflowWrap: 'break-word' }}>
+              <td style={{ ...dataFont, ...cellBorderBase, ...(isLastRow ? cellBorderBottom : {}), padding: '0.8mm', height: '7mm', verticalAlign: 'top', fontSize: '7.5pt', wordBreak: 'normal', overflowWrap: 'break-word' }}>
                 {receipt.problem_description}
               </td>
-              <td style={{ ...dataFont, ...cellBorderBase, ...(isLastRow ? cellBorderBottom : {}), padding: '0.8mm', height: '7mm', verticalAlign: 'top', fontSize: '8.5pt', wordBreak: 'normal', overflowWrap: 'break-word' }}>
+              <td style={{ ...dataFont, ...cellBorderBase, ...(isLastRow ? cellBorderBottom : {}), padding: '0.8mm', height: '7mm', verticalAlign: 'top', fontSize: '7.5pt', wordBreak: 'normal', overflowWrap: 'break-word' }}>
                 {receipt.device_model || ''}
               </td>
-              <td style={{ ...dataFont, ...cellBorderBase, ...(isLastRow ? cellBorderBottom : {}), padding: '0.8mm', height: '7mm', verticalAlign: 'top', fontSize: '8.5pt', wordBreak: 'normal', overflowWrap: 'break-word' }}>
+              <td style={{ ...dataFont, ...cellBorderBase, ...(isLastRow ? cellBorderBottom : {}), padding: '0.8mm', height: '7mm', verticalAlign: 'top', fontSize: '7.5pt', wordBreak: 'normal', overflowWrap: 'break-word' }}>
                 {receipt.serial_number || ''}
+                
               </td>
             </tr>
           );})}
@@ -256,7 +257,7 @@ export function PrintReceipt({ receipts }: PrintReceiptProps) {
           display: 'inline-block',
           letterSpacing: '0.4.3px'
         }}>
-          Contact us for Laptop, Desktop, Projector, Printer, and all kinds of computer Accessories maintenance and sales.
+          Contact us for Laptop, Desktop, Projector, Printer, and all kinds of Computer Accessories maintenance and sales.
         </p>
       </div>
 
