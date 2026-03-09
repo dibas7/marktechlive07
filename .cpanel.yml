@@ -1,4 +1,6 @@
+---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/Bigyan Acharya/public_html/
+    - export DEPLOYPATH=/home1/marktech/public_html/
     - /bin/cp -R * $DEPLOYPATH
+    - /bin/cp -R .* $DEPLOYPATH 2>/dev/null || true
